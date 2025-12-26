@@ -111,15 +111,6 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             transition: background-color 0.2s ease, border-color 0.2s ease;
         }
-        
-        /* Custom Text Shadow Control */
-        .price-text-shadow {
-            filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.5));
-        }
-        
-        body.light-mode .price-text-shadow {
-            filter: none;
-        }
 
         .tabular-nums { font-variant-numeric: tabular-nums; }
         .btn-game { transition: all 0.1s ease; transform: translateY(0); }
@@ -173,7 +164,7 @@
         <div class="w-full text-center relative mt-2 md:mt-6 mb-2">
             <h2 class="text-muted text-[10px] md:text-xs font-bold tracking-[0.3em] mb-2 uppercase opacity-60">Live Binance Price (USDT)</h2>
             <div class="w-full flex justify-center items-center">
-                <div id="btc-price" class="text-[18vw] md:text-[10rem] font-bold tracking-tighter leading-none whitespace-nowrap tabular-nums transition-colors duration-300 price-text-shadow">-------</div>
+                <div id="btc-price" class="text-[18vw] md:text-[10rem] font-bold tracking-tighter leading-none whitespace-nowrap tabular-nums transition-colors duration-300">-------</div>
             </div>
             <div id="price-change" class="mt-2 text-xl md:text-3xl font-bold tracking-tight transition-opacity duration-300 min-h-[2rem]">--</div>
         </div>
@@ -387,11 +378,11 @@
             elConnText.className = "text-[var(--up-green)]";
 
             if(newPrice > currentPrice) {
-                elPrice.className = "text-[18vw] md:text-[10rem] font-bold tracking-tighter leading-none whitespace-nowrap text-up transition-colors duration-200 tabular-nums price-text-shadow";
+                elPrice.className = "text-[18vw] md:text-[10rem] font-bold tracking-tighter leading-none whitespace-nowrap text-up transition-colors duration-200 tabular-nums";
                 elChange.innerHTML = "▲ <span class='text-sm'>UP</span>";
                 elChange.className = "mt-2 text-xl md:text-3xl font-bold tracking-tight text-up opacity-100";
             } else if (newPrice < currentPrice) {
-                elPrice.className = "text-[18vw] md:text-[10rem] font-bold tracking-tighter leading-none whitespace-nowrap text-down transition-colors duration-200 tabular-nums price-text-shadow";
+                elPrice.className = "text-[18vw] md:text-[10rem] font-bold tracking-tighter leading-none whitespace-nowrap text-down transition-colors duration-200 tabular-nums";
                 elChange.innerHTML = "▼ <span class='text-sm'>DOWN</span>";
                 elChange.className = "mt-2 text-xl md:text-3xl font-bold tracking-tight text-down opacity-100";
             }
