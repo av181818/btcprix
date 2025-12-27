@@ -142,9 +142,9 @@
 
     <header class="w-full px-4 py-4 md:px-6 md:py-6 flex items-center justify-between z-50 relative bg-transparent">
         <div class="flex-1 flex justify-start">
-            <div class="flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase text-muted">
-                <span id="connection-dot" class="w-2 h-2 rounded-full bg-gray-500"></span>
-                <span id="connection-text" class="hidden sm:inline">Connecting...</span>
+            <div class="flex items-center gap-1.5 md:gap-2 text-[8px] md:text-[10px] font-bold tracking-widest uppercase text-muted">
+                <span id="connection-dot" class="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-gray-500"></span>
+                <span id="connection-text">Connecting...</span>
             </div>
         </div>
         <div class="flex-none flex items-center gap-3 cursor-default select-none transform hover:scale-105 transition-transform duration-300">
@@ -373,9 +373,9 @@
             const newPrice = parseFloat(data.price);
             
             // Connection Indicator Logic
-            elDot.className = "w-2 h-2 rounded-full bg-[var(--up-green)] animate-pulse-dot shadow-[0_0_8px_var(--up-green)]";
+            elDot.className = "w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[var(--up-green)] animate-pulse-dot shadow-[0_0_8px_var(--up-green)]";
             elConnText.innerText = "LIVE";
-            elConnText.className = "text-[var(--up-green)] hidden sm:inline";
+            elConnText.className = "text-[var(--up-green)]";
 
             if(newPrice > currentPrice) {
                 elPrice.className = "text-[18vw] md:text-[10rem] font-bold tracking-tighter leading-none whitespace-nowrap text-up transition-colors duration-200 tabular-nums";
@@ -391,9 +391,9 @@
             document.title = `$${currentPrice.toLocaleString()} | BTC Prix`;
         } catch (error) {
             console.error('Error:', error);
-            elDot.className = "w-2 h-2 rounded-full bg-[var(--down-red)]";
+            elDot.className = "w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[var(--down-red)]";
             elConnText.innerText = "Reconnecting...";
-            elConnText.className = "text-[var(--down-red)] hidden sm:inline";
+            elConnText.className = "text-[var(--down-red)]";
         }
     }
 
